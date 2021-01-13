@@ -17,7 +17,7 @@ import kata7.view.BlockDisplay;
 /**
  *
  * @author FernandoSanfielReyes
- * @version 1.0 2020/12/23 08:48 GMT
+ * @version 2.0 2021/01/13 20:12 GMT
  *
  */
 
@@ -35,7 +35,7 @@ public class Kata7 extends JFrame{
     public Kata7() {
         this.setTitle("Block shifter");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setSize(700, 762);
+        this.setSize(717, 779);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.getContentPane().add(blockPanel());
@@ -57,20 +57,20 @@ public class Kata7 extends JFrame{
     
     private HashMap<String, Command> createCommands(){
         HashMap<String,Command> commands = new HashMap<>();
-        commands.put("U", new UpCommand(block));
-        commands.put("D", new DownCommand(block));
-        commands.put("L", new LeftCommand(block));
-        commands.put("R", new RightCommand(block));
+        commands.put("UP", new UpCommand(block));
+        commands.put("DOWN", new DownCommand(block));
+        commands.put("LEFT", new LeftCommand(block));
+        commands.put("RIGHT", new RightCommand(block));
         return commands;
     }
     
     private JMenuBar toolbar() {
         JMenuBar result = new JMenuBar();
         result.setLayout(new FlowLayout(FlowLayout.CENTER));
-        result.add(button("D"));
-        result.add(button("L"));
-        result.add(button("R"));
-        result.add(button("U"));
+        result.add(button("UP"));
+        result.add(button("DOWN"));
+        result.add(button("LEFT"));
+        result.add(button("RIGHT"));
         return result;
     }
     

@@ -12,7 +12,7 @@ import kata7.view.BlockDisplay;
 /**
  *
  * @author FernandoSanfielReyes
- * @version 2.0 2020/12/24 14:42 GMT
+ * @version 3.0 2021/01/13 20:12 GMT
  *
  */
 
@@ -39,8 +39,8 @@ public class BlockPanel extends JPanel implements BlockDisplay{
         g.setColor(Color.BLACK);
         for (int i = 0; i <= max; i++) {
             int c = i*SIZE;
-            g.drawLine(0, c, d, c);
             g.drawLine(c, 0, c, d);
+            g.drawLine(0, c, d, c);
         }
         
         g.setColor(Color.RED);
