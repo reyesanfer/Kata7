@@ -12,7 +12,7 @@ import kata7.view.BlockDisplay;
 /**
  *
  * @author FernandoSanfielReyes
- * @version 3.0 2021/01/13 20:12 GMT
+ * @version 4.0 2021/01/13 20:46 GMT
  *
  */
 
@@ -94,7 +94,7 @@ public class BlockPanel extends JPanel implements BlockDisplay{
 
         @Override
         public void mouseMoved(MouseEvent e) {
-        }
-        
+        }  
     }
+    
 }

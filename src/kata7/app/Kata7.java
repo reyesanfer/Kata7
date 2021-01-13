@@ -4,8 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.HashMap;
-import java.util.Map;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenuBar;
@@ -17,7 +18,7 @@ import kata7.view.BlockDisplay;
 /**
  *
  * @author FernandoSanfielReyes
- * @version 2.0 2021/01/13 20:12 GMT
+ * @version 3.0 2021/01/13 20:46 GMT
  *
  */
 
@@ -39,6 +40,9 @@ public class Kata7 extends JFrame{
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.getContentPane().add(blockPanel());
+        KeyHandler keyHandler = new KeyHandler();
+        addKeyListener(keyHandler);
+        setFocusable(true);
         this.add(toolbar(), BorderLayout.SOUTH);
     }
     
@@ -83,5 +87,54 @@ public class Kata7 extends JFrame{
             }
         });
         return button;
+    }
+    
+        private class KeyHandler implements KeyListener {
+
+        @Override
+        public void keyTyped(KeyEvent e) {
+            if (e.getKeyChar() == 'w' || e.getKeyChar() == 'W') {
+                UpCommand up = new UpCommand(block);
+                up.execute();
+            }
+            if (e.getKeyChar() == 's' || e.getKeyChar() == 'S') {
+                DownCommand down = new DownCommand(block);
+                down.execute();
+            }
+            if (e.getKeyChar() == 'a' || e.getKeyChar() == 'A') {
+                LeftCommand left = new LeftCommand(block);
+                left.execute();
+            }
+            if (e.getKeyChar() == 'd' || e.getKeyChar() == 'D') {
+                RightCommand right = new RightCommand(block);
+                right.execute();
+            }
+            
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            if (e.getExtendedKeyCode() == KeyEvent.VK_UP) {
+                UpCommand up = new UpCommand(block);
+                up.execute();
+            }
+            if (e.getExtendedKeyCode() == KeyEvent.VK_DOWN) {
+                DownCommand down = new DownCommand(block);
+                down.execute();
+            }
+            if (e.getExtendedKeyCode() == KeyEvent.VK_LEFT) {
+                LeftCommand left = new LeftCommand(block);
+                left.execute();
+            }
+            if (e.getExtendedKeyCode() == KeyEvent.VK_RIGHT) {
+                RightCommand right = new RightCommand(block);
+                right.execute();
+            }
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        } 
     }
 }
