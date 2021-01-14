@@ -18,7 +18,7 @@ import kata7.view.BlockDisplay;
 /**
  *
  * @author FernandoSanfielReyes
- * @version 3.0 2021/01/13 20:46 GMT
+ * @version 4.0 2021/01/14 00:48 GMT
  *
  */
 
@@ -134,7 +134,7 @@ public class Kata7 extends JFrame{
 
         @Override
         public void keyReleased(KeyEvent e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            
         } 
     }
 }

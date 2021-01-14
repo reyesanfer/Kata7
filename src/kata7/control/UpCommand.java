@@ -6,7 +6,7 @@ import kata7.model.Block;
 /**
  *
  * @author FernandoSanfielReyes
- * @version 1.0 2020/12/23 08:52 GMT
+ * @version 2.0 2021/01/14 00:48 GMT
  *
  */
 
@@ -20,7 +20,9 @@ public class UpCommand implements Command{
 
     @Override
     public void execute() {
-        block.up();
+        if (block.y() < 7) {
+            block.up();
+        }
     }
 
 }
