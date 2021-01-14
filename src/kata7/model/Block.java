@@ -9,7 +9,7 @@ import java.util.TimerTask;
 /**
  *
  * @author FernandoSanfielReyes
- * @version 2.0 2020/12/24 14:42 GMT
+ * @version 3.0 2021/01/14 11:34
  *
  */
 
@@ -49,7 +49,7 @@ public class Block {
     }
     
     public void up() {
-        if (this.x == MAX) return;
+        if (this.y == MAX) return;
         this.y++;
         changed();
     }
